@@ -30,3 +30,7 @@ pip install playwright && python3 tests/e2e.py   # 18 browser checks (uses insta
 Planned with the Devpost Learn Skill Pack (`npx skills add challengepost/learn-ai-basics --all -y`); planning docs in `devpost/` (scope.md, prd.md, spec.md, checklist.md). Built with an AI coding assistant. No pre-existing project code was used. Third-party, used only at runtime and only if you choose AI polish: WebLLM (Apache-2.0) and the Qwen2.5-0.5B model (Apache-2.0), or Ollama (MIT).
 
 Not legal advice; review documents before sending. MIT License.
+
+## Note
+
+Screenshots (`docs/screenshot.png`, `docs/print-preview.png`) are omitted from this repo.
