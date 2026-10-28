@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JobWalk Scribe — talk the job, hand over the scope</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23f2a900'/><path d='M14 46 L30 18 L36 28 L50 46Z' fill='%231d1f21'/></svg>">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><span class="logo">▲</span> JobWalk <b>Scribe</b></div>
+  <div class="tag">Talk the job. Hand over the scope.</div>
+  <label class="co">Company <input id="company" placeholder="Your company name"></label>
+</header>
+<main>
+  <section class="pane notes" aria-label="Job-walk notes">
+    <div class="pane-head"><h2>1 · Your job-walk note</h2><span class="hint">Talk or type it like you'd say it on site.</span></div>
+    <div class="recrow">
+      <button id="mic" class="mic" aria-pressed="false" title="Dictate"><span class="dot"></span><span id="micLabel">Hold to talk</span></button>
+      <button id="sample" class="ghost">Load a sample walk</button>
+      <button id="clear" class="ghost">Clear</button>
+    </div>
+    <textarea id="note" spellcheck="true" placeholder="Client is Dana Ruiz, 412 Maple St. Hall bath. Demo tub surround and vanity…"></textarea>
+    <div id="srcView" class="srcview" hidden></div>
+    <div class="opts">
+      <label>Price <input id="price" placeholder="e.g. $7,850 (optional)"></label>
+      <label>AI polish
+        <select id="aiMode">
+          <option value="off">Off · instant, rule-based</option>
+          <option value="webllm">Browser AI (WebLLM, free, on-device)</option>
+          <option value="ollama">Local Ollama (free, localhost)</option>
+        </select></label>
+    </div>
+    <button id="go" class="primary">Write it up →</button>
+    <p id="status" class="status" role="status"></p>
+  </section>
+  <section class="pane docpane" aria-label="Client document">
+    <div class="pane-head"><h2>2 · Client-ready scope</h2>
+      <div class="actions"><button id="copy" class="ghost" disabled>Copy</button><button id="dl" class="ghost" disabled>Download .txt</button><button id="print" class="ghost" disabled>Print / PDF</button></div></div>
+    <div id="meter" class="meter" hidden></div>
+    <article id="doc" spellcheck="false" class="paper empty"><p class="placeholder">Your scope of work shows up here.<br>Every line traces back to something you said — click any line to see where it came from.</p></article>
+  </section>
+</main>
+<footer>Runs in your browser. Notes never leave this device unless you turn on Ollama (your own computer). MIT licensed.</footer>
+<script src="src/engine.js"></script>
+<script src="src/ai.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
