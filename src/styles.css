@@ -1,0 +1,32 @@
+:root{--ink:#1d1f21;--paper:#fffdf8;--hat:#f2a900;--line:#e6e0d4;--mute:#6b6b6b;--ok:#2e7d32;--warn:#b26a00;--q:#1565c0}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#efeae0}
+.bar{display:flex;align-items:center;gap:18px;padding:12px 22px;background:var(--ink);color:#fff;flex-wrap:wrap}
+.brand{font-size:20px;letter-spacing:.3px}.brand b{color:var(--hat)}.logo{color:var(--hat)}.tag{color:#bbb;flex:1}
+.co input{margin-left:6px;padding:6px 8px;border-radius:6px;border:0;width:200px}
+main{display:grid;grid-template-columns:minmax(320px,1fr) minmax(380px,1.25fr);gap:18px;padding:18px 22px}
+@media(max-width:860px){main{grid-template-columns:1fr}}
+.pane{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px #0002;display:flex;flex-direction:column;gap:10px}
+.pane-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}h2{font-size:16px;margin:0}.hint{color:var(--mute);font-size:13px}
+.recrow{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;border-radius:9px;padding:8px 14px;border:1px solid var(--line);background:#fff}button:disabled{opacity:.45;cursor:default}
+.ghost:hover:not(:disabled){background:#f6f2ea}
+.mic{background:var(--ink);color:#fff;border:0;display:flex;align-items:center;gap:8px;font-weight:600}
+.mic .dot{width:12px;height:12px;border-radius:50%;background:#e53935}.mic[aria-pressed=true]{background:#e53935}.mic[aria-pressed=true] .dot{background:#fff;animation:p 1s infinite}
+@keyframes p{50%{opacity:.2}}
+textarea{min-height:260px;resize:vertical;font:15px/1.55 ui-monospace,Menlo,Consolas,monospace;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fcfbf7}
+.srcview{font:14px/1.6 ui-monospace,Menlo,monospace;padding:12px;border:1px dashed var(--line);border-radius:10px;background:#fcfbf7;max-height:200px;overflow:auto}
+.srcview span{border-radius:4px;padding:0 2px}.srcview .hit{background:#ffe08a;outline:2px solid var(--hat)}
+.opts{display:flex;gap:10px;flex-wrap:wrap}.opts label{display:flex;flex-direction:column;font-size:12px;color:var(--mute);gap:3px;flex:1}
+.opts input,.opts select{font:inherit;padding:7px;border:1px solid var(--line);border-radius:8px;color:var(--ink)}
+.primary{background:var(--hat);border:0;font-weight:700;font-size:17px;padding:12px}.primary:hover{filter:brightness(1.05)}
+.status{min-height:1.3em;margin:0;color:var(--mute);font-size:13px}
+.meter{display:flex;gap:8px;flex-wrap:wrap}.chip{font-size:12px;padding:3px 9px;border-radius:99px;background:#f1eee6}.chip.ok{background:#e3f2e4;color:var(--ok)}.chip.q{background:#e3eefb;color:var(--q)}.chip.w{background:#fff1d6;color:var(--warn)}
+.paper{max-height:calc(100vh - 190px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:34px 40px;min-height:520px;font-family:Georgia,"Times New Roman",serif;font-size:15.5px}
+.paper.empty{display:grid;place-items:center;text-align:center;color:var(--mute)}
+.paper h1{font-size:24px;margin:0 0 10px;border-bottom:3px solid var(--hat);padding-bottom:6px}.paper h2{font-size:15px;text-transform:uppercase;letter-spacing:.8px;margin:22px 0 6px;color:#333}
+.paper h3{font-size:14px;margin:12px 0 2px;color:#555}.paper table{border-collapse:collapse;margin-bottom:12px}.paper td{padding:2px 14px 2px 0}.paper td:first-child{color:var(--mute)}
+.paper ol,.paper ul{margin:2px 0}.paper p{margin:6px 0}.paper li{margin:3px 0;cursor:pointer;border-radius:4px}.paper li:hover{background:#fff4cf}.paper li.ai::after{content:" ✦";color:var(--hat);font-size:11px}
+.paper .qs li{color:var(--q)}.paper .flags li{color:var(--warn)}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}.sign div{border-top:1px solid #333;padding-top:4px;font-size:13px}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:10px 0 24px}
+@media print{.bar,.notes,footer,.pane-head,.meter{display:none!important}main{display:block;padding:0}.pane{box-shadow:none;padding:0}.paper{border:0;padding:0}.paper li.ai::after{content:""}}
